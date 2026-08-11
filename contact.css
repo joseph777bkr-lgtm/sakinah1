@@ -1,0 +1,711 @@
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: beige;
+    font-family: Arial, sans-serif;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: linear-gradient(
+        to right,
+        #06196d,
+        black,
+        #06196d
+    );
+
+    height: 10vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1001;
+
+    overflow: hidden;
+}
+
+header h1 {
+    color: white;
+
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
+
+/* ================= TEXT ANIMATION ================= */
+
+.text {
+    position: absolute;
+    opacity: 0;
+
+    animation: changeText 9s infinite;
+}
+
+.text1 {
+    animation-delay: 0s;
+}
+
+.text2 {
+    animation-delay: 3s;
+}
+
+.text3 {
+    animation-delay: 6s;
+}
+
+@keyframes changeText {
+
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    40% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ================= NAV ================= */
+
+nav {
+    background: linear-gradient(
+        to right,
+        #0b2ab8,
+        black,
+        #0b2ab8
+    );
+
+    width: 100%;
+    height: 10vh;
+
+    position: fixed;
+
+    top: 10vh;
+    left: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding-left: 50px;
+}
+
+/* ================= LOGO ================= */
+
+nav img {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+
+    z-index: 2;
+}
+
+/* ================= NAV H2 ================= */
+
+nav h2 {
+    margin: 0;
+}
+
+/* ================= NAV LINKS ================= */
+
+nav a {
+    position: relative;
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: rgb(224, 225, 233);
+
+    font-size: 20px;
+    font-weight: bold;
+
+    padding: 10px 0;
+
+    margin-right: 20px;
+
+    transition: color 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* ================= HOVER ================= */
+
+nav a:hover {
+    color: #d4af37;
+
+    transform: translateY(-3px);
+}
+
+/* ================= UNDERLINE ================= */
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 3px;
+
+    left: 50%;
+    bottom: 2px;
+
+    background-color: #d4af37;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+
+    border-radius: 2px;
+}
+
+/* HOVER LINE */
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ACTIVE PAGE */
+
+nav a.active::after {
+    width: 100%;
+}
+
+/* ================= CART COUNT ================= */
+
+#cart-count {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 20px;
+    height: 20px;
+
+    padding: 2px 6px;
+
+    margin-left: 3px;
+
+    background: #d4af37;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+}
+
+/* ================= MAIN ================= */
+
+main {
+    min-height: 100vh;
+
+    padding-top: 22vh;
+
+    padding-bottom: 60px;
+
+    background: beige;
+}
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding-bottom: 20px;
+}
+
+/* ================= TITLE ================= */
+
+.contact-title {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.contact-title h1 {
+    color: #080bdf;
+
+    font-family: "Playfair Display", serif;
+
+    font-style: italic;
+
+    font-size: 40px;
+
+    margin: 0;
+}
+
+.contact-title p {
+    color: #0d3c94;
+
+    font-family: "Playfair Display", serif;
+
+    font-style: italic;
+
+    font-weight: bold;
+
+    font-size: 20px;
+
+    margin-top: 8px;
+}
+
+/* ================= CONTACT CONTAINER ================= */
+
+.contact-container {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+/* ================= CONTACT INFO ================= */
+
+.contact-info {
+    background: linear-gradient(
+        145deg,
+        #06196d,
+        #02030b
+    );
+
+    color: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    min-width: 0;
+}
+
+.contact-info h2 {
+    color: #d4af37;
+
+    font-family: "Playfair Display", serif;
+
+    margin-bottom: 15px;
+
+    font-size: 28px;
+}
+
+.info-description {
+    line-height: 1.7;
+
+    color: #eeeeee;
+
+    margin-bottom: 30px;
+}
+
+/* ================= INFO ITEM ================= */
+
+.info-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    width: 100%;
+}
+
+.info-icon {
+    flex-shrink: 0;
+
+    width: 35px;
+
+    font-size: 24px;
+
+    text-align: center;
+}
+
+.info-text {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.info-text h3 {
+    color: #d4af37;
+
+    margin-bottom: 5px;
+
+    font-size: 18px;
+}
+
+.info-text p {
+    color: #eeeeee;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    word-break: normal;
+}
+
+/* ================= CONTACT FORM ================= */
+
+.contact-form {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15);
+
+    min-width: 0;
+}
+
+.contact-form h2 {
+    color: #06196d;
+
+    font-family: "Playfair Display", serif;
+
+    margin-bottom: 25px;
+
+    font-size: 24px;
+}
+
+/* ================= FORM GROUP ================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #222;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s ease;
+
+    background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #d4af37;
+
+    box-shadow:
+        0 0 0 3px rgba(212, 175, 55, 0.12);
+
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 130px;
+}
+
+/* ================= BUTTONS ================= */
+
+.form-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+.send-btn,
+.reset-btn {
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+/* SEND BUTTON */
+
+.send-btn {
+    flex: 1;
+
+    background: #111;
+
+    color: white;
+
+    border: 1px solid #111;
+}
+
+.send-btn:hover {
+    background: #d4af37;
+
+    border-color: #d4af37;
+
+    transform: translateY(-2px);
+}
+
+/* RESET BUTTON */
+
+.reset-btn {
+    background: white;
+
+    color: #111;
+
+    border: 1px solid #aaa;
+}
+
+.reset-btn:hover {
+    background: #eee;
+}
+
+/* ================= SUCCESS ================= */
+
+.success-message {
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    background: #e8f7e8;
+
+    color: #217a21;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+/* ================================================= */
+/* ================= MOBILE ======================== */
+/* ================================================= */
+
+@media (max-width: 700px) {
+
+    header {
+        height: 12vh;
+    }
+
+    header h1 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    nav {
+        top: 12vh;
+
+        height: 10vh;
+
+        gap: 5px;
+
+        padding-left: 15px;
+
+        padding-right: 5px;
+    }
+
+    nav img {
+        width: 65px;
+        height: 65px;
+    }
+
+    nav h2 {
+        margin: 0;
+    }
+
+    nav a {
+        font-size: 12px;
+
+        padding: 5px 0;
+
+        margin-right: 5px;
+    }
+
+    nav a::after {
+        height: 2px;
+
+        bottom: 0;
+    }
+
+    #cart-count {
+        min-width: 16px;
+
+        height: 16px;
+
+        font-size: 9px;
+
+        padding: 1px 4px;
+    }
+
+    main {
+        padding-top: 24vh;
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+    }
+
+    .contact-section {
+        width: 100%;
+    }
+
+    .contact-title {
+        margin-bottom: 25px;
+    }
+
+    .contact-title h1 {
+        font-size: 28px;
+    }
+
+    .contact-title p {
+        font-size: 17px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 22px;
+    }
+
+    .contact-info h2 {
+        font-size: 23px;
+    }
+
+    .info-item {
+        gap: 10px;
+
+        margin-bottom: 20px;
+    }
+
+    .info-icon {
+        width: 30px;
+
+        font-size: 21px;
+    }
+
+    .info-text h3 {
+        font-size: 16px;
+    }
+
+    .info-text p {
+        font-size: 13px;
+    }
+
+    .contact-form h2 {
+        font-size: 19px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .send-btn,
+    .reset-btn {
+        width: 100%;
+    }
+}
+
+
+.success-message {
+    display: block;
+    margin-bottom: 20px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #e8f7e8;
+    color: #217a21;
+    text-align: center;
+    font-weight: bold;
+}
+
+.error-message {
+    display: block;
+    margin-bottom: 20px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #ffe8e8;
+    color: #b00000;
+    text-align: center;
+    font-weight: bold;
+}
